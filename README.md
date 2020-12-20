@@ -1,4 +1,4 @@
-
+<!-- 
 # Unit 06 Server-Side APIs Homework: Weather Dashboard
 
 For this week's homework we were tasked with developing a dashboard that would
@@ -29,7 +29,7 @@ application:
 - Creating layout elements dynamically, rather than having them available to be
   appended to on first search: because the local weather does not appear on
   first load, the landing page looks sloppy until you've searched for your first
-  city.
+  city. -->
 
 
 
