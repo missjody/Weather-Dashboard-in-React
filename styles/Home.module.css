@@ -1,3 +1,16 @@
+.bkg {
+  background-color: grey;
+  color: white;
+  border-radius: 1rem;
+  margin-top: 3rem;
+  margin-left: 1rem;
+  margin-right: 3rem;
+  word-wrap: break-word;
+  box-shadow: 0 4px 8px 0 rgb(169,169,169), 0 6px 20px 0 rgb(169,169,169);
+}
+
+
+
 /* .container {
   min-height: 100vh;
   padding: 0 0.5rem;

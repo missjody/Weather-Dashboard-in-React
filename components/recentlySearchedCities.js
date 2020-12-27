@@ -4,7 +4,7 @@
 import React from 'react';
 
 
-const recentlySearchedCities = (dataInRecentHistory) => {
+const RecentlySearchedCities = (dataInRecentHistory) => {
     if (dataInRecentHistory) {
         // display "Recently Searched Cities"
         // and the list of the recently searched cities
@@ -13,4 +13,4 @@ const recentlySearchedCities = (dataInRecentHistory) => {
     }
 }
 
-export default recentlySearchedCities
+export default RecentlySearchedCities

@@ -6,7 +6,7 @@
 import React from 'react';
 
 
-const fiveDayForcast = (fiveDayInfo) => {
+const FiveDayForcast = (fiveDayInfo) => {
     if (fiveDayInfo) {
         //loop through fiveDayInfo 
         //displaying each day in it's own box
@@ -15,4 +15,4 @@ const fiveDayForcast = (fiveDayInfo) => {
     }
 }
 
-export default fiveDayForcast;
+export default FiveDayForcast;

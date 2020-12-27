@@ -8,7 +8,7 @@
 // <todaysWeather weatherToday={weatherToday} />
 import React from 'react';
 
-const todaysWeather = (weatherToday) => {
+const TodaysWeather = (weatherToday) => {
     if (weatherToday) {
         //display today's weather information and icons
     } else {
@@ -16,4 +16,4 @@ const todaysWeather = (weatherToday) => {
     }
 }
 
-export default todaysWeather;
+export default TodaysWeather;

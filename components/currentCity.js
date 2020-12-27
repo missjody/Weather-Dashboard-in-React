@@ -5,13 +5,24 @@
 // {/* <p className="mr-auto ml-auto mt-3">Current City: Dynamically Insert City Name Here</p> */}
 
 import React from 'react';
+import {Container, Row, Col, Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
 
-const currentCity = (city) => {
-    if (city) {
-        //display city
-    } else {
+const CurrentCity = () => {
+    // if (city) {
+    //     //display city
+    //     return (
+    //         <h5> woops </h5>
+    //     )
+    // } else {
+        return ( 
         //display nothing
-    }
+        <Row>
+            <Col>
+                <h5> test </h5>
+            </Col> 
+        </Row>
+        )
+    // }
 }
 
-export default currentCity;
+export default CurrentCity;

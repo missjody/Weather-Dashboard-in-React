@@ -1,10 +1,10 @@
 import Head from 'next/head'
-// import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css'
 
-import recentlySearchedCities from "../components/recentlySearchedCities";
-import fiveDayForcast from "../components/fiveDayForcast";
-import todaysWeather from "../components/todaysWeather";
-import currentCity from "../components/currentCity";
+// import RecentlySearchedCities from "../components/RecentlySearchedCities";
+// import FiveDayForcast from "../components/FiveDayForcast";
+// import TodaysWeather from "../components/TodaysWeather";
+import CurrentCity from "../components/CurrentCity";
 
 import {Container, Row, Col, Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
 
@@ -45,10 +45,11 @@ export default function Home() {
           {/* PUT THE CURRENT CITY HERE WHEN CURRENT CITY HAS A VALUE */}
           {/* VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */}
           {/* city={city} */}
-          <currentCity  />
+          <CurrentCity  />
+          
     
 
-          <Form inline>
+          <Form inline >
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
             <Button variant="outline-success">Search</Button>
           </Form>
@@ -67,8 +68,8 @@ export default function Home() {
       <Container>
 
         <Row>
-          <Col sm={12} md={8}>
-
+          <Col sm={12} md={8} className={styles.bkg}>
+            <h4> TEST CONTAINTER/ROW/1st COL</h4>
             {/* VVVVVVVVVVV MAKE THIS A COMPONENT VVVVVVVVVVV */}
             {/* <div className="shadow-lg p-3 mb-5 bg-white rounded mt-5">
               <h1> TODAYS DATE AND WEATHER ICON FOR TODAY </h1>
@@ -77,7 +78,7 @@ export default function Home() {
               <h3>Wind Speed</h3>
               <h3>UV Index and Index Icon</h3> */}
               {/* weatherToday={weatherToday} */}
-              <todaysWeather />
+              {/* <TodaysWeather /> */}
 
 
               {/* VVVVVVVVVVV MAKE THIS A COMPONENT VVVVVVVVVVV */}
@@ -85,16 +86,17 @@ export default function Home() {
                 Internal box with Five day forcast in a spreadsheet type format
               </div> */}
                {/* fiveDayInfo={fiveDayInfo} */}
-              <fiveDayForcast />
+              {/* <FiveDayForcast /> */}
             {/* </div> */}
           </Col>
           
-          <Col>
+          <Col md={{span: 2, offset: 2}} className={styles.bkg}>
+            <h4> TEST CONTAINTER/ROW/1st COL</h4>
 
             {/* VVVVVVVVVVV MAKE THIS A COMPONENT VVVVVVVVVVV */}
             {/* <div className="shadow-lg p-3 mb-5 bg-white rounded mt-md-5 mt-sm-0">Recently searched cities' links</div> */}
             {/* dataInRecentHistory={dataInRecentHistory} */}
-            <recentlySearchedCities />
+            {/* <RecentlySearchedCities /> */}
           </Col>
         </Row>
 
