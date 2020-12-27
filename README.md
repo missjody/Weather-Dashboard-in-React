@@ -1,3 +1,8 @@
+  // IMPORTANT 
+  // hide api key
+  // allow for seraching of city and state or just city
+
+
 <!-- 
 # Unit 06 Server-Side APIs Homework: Weather Dashboard
 

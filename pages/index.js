@@ -1,25 +1,18 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+// import styles from '../styles/Home.module.css'
+
+import recentlySearchedCities from "../components/recentlySearchedCities";
+import fiveDayForcast from "../components/fiveDayForcast";
+import todaysWeather from "../components/todaysWeather";
+import currentCity from "../components/currentCity";
 
 import {Container, Row, Col, Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
 
+// DO WE DO OUR ASYNC CALLS HERE AND THEN PASS THEM AS PROPS TO EACH OF THE COMPONENTS??
+
+// ON LOAD ASK FOR PERMISSION TO GRAB CURRENT LOCATION TO DISPLAY THAT LOCATIONS WEATHER
+
 export default function Home() {
-
-
-
-  
-  
-  // IMPORTANT 
-  // hide api key
-  // allow for seraching of city and state or just city
-  
-  
-  // return (
-    //   <div>
-    //     test
-    //   </div>
-    // )
-    
     
   return (
     // 1)
@@ -38,7 +31,7 @@ export default function Home() {
         City name displays here, search bar is available here */}
 
       {/* VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */}
-      {/* STILL TO DO: STYLE, UPDATE APP NAME, CHANGE LINK OPTIONS*/}
+      {/* STILL TO DO: STYLE */}
       {/* LINK SEARCH TO API CALL, LINK CURRENT CITY NAME DYNAMIC */}
       {/* VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */}
 
@@ -47,16 +40,13 @@ export default function Home() {
         <Navbar.Brand href="#home">Weather Dashboard</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">  
-          {/* I don't really think we'll need links
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-          </Nav> */}
-      
+ 
           {/* VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */}
           {/* PUT THE CURRENT CITY HERE WHEN CURRENT CITY HAS A VALUE */}
           {/* VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */}
-          <p className="mr-auto ml-auto mt-3">Current City: Dynamically Insert City Name Here</p>
+          {/* city={city} */}
+          <currentCity  />
+    
 
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -78,21 +68,33 @@ export default function Home() {
 
         <Row>
           <Col sm={12} md={8}>
-            <div className="shadow-lg p-3 mb-5 bg-white rounded mt-5">
-              <h1> CITY NAME, TODAYS DATE AND WEATHER ICON FOR TODAY </h1>
+
+            {/* VVVVVVVVVVV MAKE THIS A COMPONENT VVVVVVVVVVV */}
+            {/* <div className="shadow-lg p-3 mb-5 bg-white rounded mt-5">
+              <h1> TODAYS DATE AND WEATHER ICON FOR TODAY </h1>
               <h3>Temp</h3>
               <h3>Humidity</h3>
               <h3>Wind Speed</h3>
-              <h3>UV Index and Index Icon</h3>
+              <h3>UV Index and Index Icon</h3> */}
+              {/* weatherToday={weatherToday} */}
+              <todaysWeather />
 
-              <div>
+
+              {/* VVVVVVVVVVV MAKE THIS A COMPONENT VVVVVVVVVVV */}
+              {/* <div>
                 Internal box with Five day forcast in a spreadsheet type format
-              </div>
-            </div>
+              </div> */}
+               {/* fiveDayInfo={fiveDayInfo} */}
+              <fiveDayForcast />
+            {/* </div> */}
           </Col>
           
           <Col>
-            <div className="shadow-lg p-3 mb-5 bg-white rounded mt-md-5 mt-sm-0">Recently searched cities' links</div>
+
+            {/* VVVVVVVVVVV MAKE THIS A COMPONENT VVVVVVVVVVV */}
+            {/* <div className="shadow-lg p-3 mb-5 bg-white rounded mt-md-5 mt-sm-0">Recently searched cities' links</div> */}
+            {/* dataInRecentHistory={dataInRecentHistory} */}
+            <recentlySearchedCities />
           </Col>
         </Row>
 
