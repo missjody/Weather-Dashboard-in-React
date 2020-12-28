@@ -12,6 +12,8 @@ import {Container, Row, Col, Navbar, Nav, NavDropdown, Form, FormControl, Button
 
 // ON LOAD ASK FOR PERMISSION TO GRAB CURRENT LOCATION TO DISPLAY THAT LOCATIONS WEATHER
 
+// console.log("INDEX API KEY", process.env.REACT_APP_WEATHER_API_KEY)
+
 export default function Home() {
     
   return (
@@ -38,18 +40,18 @@ export default function Home() {
 
       <Navbar sticky="top" bg="light" expand="lg">
         <Navbar.Brand href="#home">Weather Dashboard</Navbar.Brand>
+          <CurrentCity  />
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">  
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">  
  
           {/* VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */}
           {/* PUT THE CURRENT CITY HERE WHEN CURRENT CITY HAS A VALUE */}
           {/* VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */}
           {/* city={city} */}
-          <CurrentCity  />
           
     
 
-          <Form inline >
+          <Form inline  >
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
             <Button variant="outline-success">Search</Button>
           </Form>

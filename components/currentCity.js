@@ -6,6 +6,8 @@
 
 import React from 'react';
 import {Container, Row, Col, Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
+import styles from "./CurrentCity.module.css"
+
 
 const CurrentCity = () => {
     // if (city) {
@@ -16,8 +18,8 @@ const CurrentCity = () => {
     // } else {
         return ( 
         //display nothing
-        <Row>
-            <Col>
+        <Row className={styles.custom}>
+            <Col >
                 <h5> test </h5>
             </Col> 
         </Row>
