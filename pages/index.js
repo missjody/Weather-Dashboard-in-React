@@ -1,22 +1,48 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
+import React, {useEffect} from 'react';
+
 // import RecentlySearchedCities from "../components/RecentlySearchedCities";
 // import FiveDayForcast from "../components/FiveDayForcast";
 // import TodaysWeather from "../components/TodaysWeather";
 import CurrentCity from "../components/CurrentCity";
+// import Search from "../components/Search";
 
 import {Container, Row, Col, Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
 
-// DO WE DO OUR ASYNC CALLS HERE AND THEN PASS THEM AS PROPS TO EACH OF THE COMPONENTS??
-
-// ON LOAD ASK FOR PERMISSION TO GRAB CURRENT LOCATION TO DISPLAY THAT LOCATIONS WEATHER
-
-// console.log("INDEX API KEY", process.env.REACT_APP_WEATHER_API_KEY)
-
 export default function Home() {
+
+  // use state or local storage for the previously searched? 
+  // whatever was the last searched is the currently displayed if you leave
+  // and come back to the page?
+  
+  useEffect(() => {
+
+    // ON LOAD ASK FOR PERMISSION TO GRAB CURRENT LOCATION TO DISPLAY THAT LOCATIONS WEATHER
+      // if they say yes grab lat/lon and do a search
+      // https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
+      // else
+      // pull the search for Denver, CO lat/lon
+
+  }, []);
     
-  return (
+  handleSearch(() => {
+
+    // DO WE DO OUR ASYNC CALLS HERE AND THEN PASS THEM AS PROPS TO EACH OF THE COMPONENTS??
+    // let apiKey = process.env.REACT_APP_WEATHER_API_KEY;
+    // or let call = `https://api.openweathermap.org/data/2.5/weather?q={searchTerm}&appid={process.env.REACT_APP_WEATHER_API_KEY}`
+    // the search term can be just a city, or a city and state but spelled out fully? 
+
+    // or look up lon and lat based on search term? 
+    // then pass that to the api call
+    // https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
+
+  })
+
+
+
+    return (
     // 1)
     // Head with "Weather Dashboard"
     // [cloud icon?]
@@ -40,17 +66,15 @@ export default function Home() {
 
       <Navbar sticky="top" bg="light" expand="lg">
         <Navbar.Brand href="#home">Weather Dashboard</Navbar.Brand>
-          <CurrentCity  />
+
+        {/* VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */}
+        {/* PUT THE CURRENT CITY HERE WHEN CURRENT CITY HAS A VALUE */}
+        {/* VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */}
+        {/* city={city} */}
+        <CurrentCity  />
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">  
- 
-          {/* VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */}
-          {/* PUT THE CURRENT CITY HERE WHEN CURRENT CITY HAS A VALUE */}
-          {/* VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */}
-          {/* city={city} */}
-          
-    
-
           <Form inline  >
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
             <Button variant="outline-success">Search</Button>
