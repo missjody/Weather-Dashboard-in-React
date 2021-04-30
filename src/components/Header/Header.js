@@ -27,36 +27,62 @@ const Header = () => {
     const [city, setCity] = useState("Denver, CO")
     const [lat, setLat] = useState(39.59)
     const [lon, setLon] = useState(-104.97)
+    const [fetchedCity, setFetchedCity] = useState([])
+    let fetchCityLink = ""
     
     useEffect(() => {
 
         // use if it is available or not to decide what to give CurCity/set state to
         if ("geolocation" in navigator) {
-            console.log("Available");
+            // console.log("Available");
             navigator.geolocation.getCurrentPosition(function(position) {
                 // console.log("Latitude is :", position.coords.latitude.toFixed(2));
                 setLat(position.coords.latitude.toFixed(2))
                 // console.log("Longitude is :", position.coords.longitude.toFixed(2));
                 setLon(position.coords.longitude.toFixed(2))
                 console.log("Called information, " + lat + ", " + lon + ", " + city);
-              });
+            });
+
+            fetchCityLink = "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=" + lat + "&longitude=" + lon + "&localityLanguage=en";
+            
+            // Do call for the api to set the new city
+            fetch(fetchCityLink) 
+                .then(res => res.json())
+                .then((result) => {
+                    setFetchedCity(result.city + ", " + result.principalSubdivisionCode)
+                    console.log("Did it work? ", fetchedCity)
+                // },
+                // (error) => {
+                //    setFetchedCity(error)
+                // });
+                    }
+                )
+
+            // Do call for the new lat/lon for weather information
+            // set it to a variable? or a state?
             
           } else {
             console.log("Use Default, " + lat + ", " + lon + ", " + city);
-          }
 
-          // added the [] because it was running multiple time on load
-    }, [])
+            // Do call for the lat/lon for weather information
+            // set it to a variable? or a state?
+            
+        }
+
+    })
 
 
     return (
         <Jumbotron fluid>
             <Container>
                 <Row>
+                    {/* once all the calls are figured out we're going to call the 
+                    individual components and pass them what is in sate */}
                     {/* <CurCity />  */}
-                    <Col> {city} </Col>
+                    <Col> {fetchedCity} </Col>
                     <Col> WeatherDash Logo Goes Here </Col>
-                    <Col> Current City's Weather Icon and Current Temp </Col>
+                    {/* change image and temp over to call icon information */}
+                    <Col> <img alt="weatherIcon" src="http://openweathermap.org/img/wn/10d@2x.png"/> and Current Temp </Col>
                 </Row>
             </Container>
         </Jumbotron>

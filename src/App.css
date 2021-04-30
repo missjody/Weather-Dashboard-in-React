@@ -21,6 +21,12 @@
   padding: 2rem;
 }
 
+.jumbotron-fluid {
+  border-radius: 25px !important;
+  background: #5C757E !important;
+  margin: .5rem !important;
+  padding: 2rem !important;
+}
 
 /* _________________________ */
 
