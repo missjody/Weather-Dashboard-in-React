@@ -17,12 +17,29 @@
 //                                                                                      //
 //////////////////////////////////////////////////////////////////////////////////////////
 
-import React from "react";
+import React, {useEffect} from "react";
 import {Jumbotron, Container, Row, Col} from "react-bootstrap"
 
 // import CurCity from "../CurCity/CurCity"
 
 const Header = () => {
+
+    
+    useEffect(() => {
+
+        // use if it is available or not to decide what to give CurCity/set state to
+        if ("geolocation" in navigator) {
+            console.log("Available");
+            navigator.geolocation.getCurrentPosition(function(position) {
+                console.log("Latitude is :", position.coords.latitude.toFixed(2));
+                console.log("Longitude is :", position.coords.longitude.toFixed(2));
+              });
+            
+          } else {
+            console.log("Not Available");
+          }
+
+    })
 
 
     return (
