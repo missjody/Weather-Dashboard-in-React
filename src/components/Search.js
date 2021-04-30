@@ -28,7 +28,7 @@ const Search = () => {
                 aria-describedby="basic-addon2"
             />
             <InputGroup.Append>
-                <Button variant="outline-secondary">Submit</Button>
+                <Button variant="secondary">Submit</Button>
             </InputGroup.Append>
         </InputGroup>
 

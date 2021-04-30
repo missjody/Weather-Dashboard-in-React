@@ -17,13 +17,16 @@
 //                                                                                      //
 //////////////////////////////////////////////////////////////////////////////////////////
 
-import React, {useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import {Jumbotron, Container, Row, Col} from "react-bootstrap"
 
 // import CurCity from "../CurCity/CurCity"
 
 const Header = () => {
 
+    const [city, setCity] = useState("Denver, CO")
+    const [lat, setLat] = useState(39.59)
+    const [lon, setLon] = useState(-104.97)
     
     useEffect(() => {
 
@@ -31,15 +34,19 @@ const Header = () => {
         if ("geolocation" in navigator) {
             console.log("Available");
             navigator.geolocation.getCurrentPosition(function(position) {
-                console.log("Latitude is :", position.coords.latitude.toFixed(2));
-                console.log("Longitude is :", position.coords.longitude.toFixed(2));
+                // console.log("Latitude is :", position.coords.latitude.toFixed(2));
+                setLat(position.coords.latitude.toFixed(2))
+                // console.log("Longitude is :", position.coords.longitude.toFixed(2));
+                setLon(position.coords.longitude.toFixed(2))
+                console.log("Called information, " + lat + ", " + lon + ", " + city);
               });
             
           } else {
-            console.log("Not Available");
+            console.log("Use Default, " + lat + ", " + lon + ", " + city);
           }
 
-    })
+          // added the [] because it was running multiple time on load
+    }, [])
 
 
     return (
@@ -47,7 +54,7 @@ const Header = () => {
             <Container>
                 <Row>
                     {/* <CurCity />  */}
-                    <Col> Current City goes here </Col>
+                    <Col> {city} </Col>
                     <Col> WeatherDash Logo Goes Here </Col>
                     <Col> Current City's Weather Icon and Current Temp </Col>
                 </Row>
