@@ -1,6 +1,6 @@
 # Redoing group project from bootcamp in React
 
-Project notes at (https://github.com/missjody/Weather-Dashboard-in-React/projects/1)
+Project notes at https://github.com/missjody/Weather-Dashboard-in-React/projects/1
 
 ock out CSS in index.html to confirm assumed components and pages match up with what we need
 
